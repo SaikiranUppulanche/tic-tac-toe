@@ -103,6 +103,11 @@ const TicTacToe = () => {
     setWinningCombo(null);
   }
 
+  function handleReset() {
+    setScores({ X: 0, O: 0 });
+    handleRestart();
+  }
+
   return (
     <div className="container">
       <CurrentPlayer activePlayer={activePlayer} />
@@ -118,6 +123,10 @@ const TicTacToe = () => {
         winningCombo={winningCombo}
       />
       <MessageDisplay message={message} onRestart={handleRestart} />
+
+      <button className="reset-button" onClick={handleReset}>
+        Reset Game
+      </button>
     </div>
   );
 };

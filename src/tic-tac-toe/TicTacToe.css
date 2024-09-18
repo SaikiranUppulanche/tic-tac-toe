@@ -21,6 +21,26 @@
   margin: 5px 0;
 }
 
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #ff1a1a;
+}
+
+.reset-button:active {
+  background-color: #e60000;
+}
+
 @media (max-width: 600px) {
   .scores {
     font-size: 1.2rem;
