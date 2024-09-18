@@ -9,6 +9,7 @@ This is a simple and interactive Tic-Tac-Toe game built using **React** with **V
 - Automatically detects win patterns or a draw.
 - Displays the current player and game status.
 - Restart button to reset the game after a win or a draw.
+- Click the "Reset Game" button to reset both the scores and the game board, starting fresh.
 
 ## How to Play
 
@@ -17,6 +18,7 @@ This is a simple and interactive Tic-Tac-Toe game built using **React** with **V
 3. Players alternate turns, and the game will check for winning conditions.
 4. The game will announce the winner or a draw after 9 moves.
 5. Click the **Restart** button to play again.
+6. Click the "Reset Game" button to reset both the scores and the game board, starting fresh.
 
 ## Getting Started
 
@@ -34,9 +36,15 @@ This is a simple and interactive Tic-Tac-Toe game built using **React** with **V
 
    ```
 
-2. Navigate to the project directory:  
+2. Navigate into the project directory:
+   ```bash
    cd tic-tac-toe
-3. Install the dependencies:
+   ```
+3. Install the required dependencies:
+   ```bash
    npm install
-4. Start the app:
+   ```
+4. Start the development server:
+   ```bash
    npm run dev
+   ```
