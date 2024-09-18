@@ -4,7 +4,7 @@ This is a simple and interactive Tic-Tac-Toe game built using **React** with **V
 
 ## Demo
 
-You can play the game [here](https://tictactoesai.netlify.app/).
+You can play the game [here](https://tictactoeofsai.netlify.app/).
 
 ## Features
 
