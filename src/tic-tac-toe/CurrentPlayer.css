@@ -1,0 +1,17 @@
+.current-player {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.current-player span {
+  color: #2131e4;
+}
+
+@media (max-width: 600px) {
+  .current-player {
+    font-size: 1.2rem;
+  }
+}
