@@ -12,14 +12,16 @@
   transition: background-color 0.3s ease;
 }
 
-@media (min-width: 600px) {
-  .cell {
-    font-size: 3.5vw;
-  }
+.cell {
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cell:hover {
-  background-color: blanchedalmond;
+  transform: scale(1.1); /* Scale effect when hovered */
+}
+
+.cell:active {
+  transform: scale(0.95); /* Click effect */
 }
 
 .cell:focus {
@@ -43,8 +45,31 @@
   border-right: 0.2rem solid black;
 }
 
+@media (min-width: 600px) {
+  .cell {
+    font-size: 3.5vw;
+  }
+}
+
 @media (max-width: 600px) {
   .cell {
     font-size: 1.5rem;
+  }
+}
+
+.winning-cell {
+  background-color: lightgreen;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: lightgreen;
+  }
+  50% {
+    background-color: yellowgreen;
+  }
+  100% {
+    background-color: lightgreen;
   }
 }

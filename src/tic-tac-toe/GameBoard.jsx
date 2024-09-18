@@ -1,7 +1,12 @@
 import Cell from "./Cell";
 import "./GameBoard.css";
 
-const GameBoard = ({ playerTurn, activePlayer, handlePlayerTurn }) => {
+const GameBoard = ({
+  playerTurn,
+  activePlayer,
+  handlePlayerTurn,
+  winningCombo,
+}) => {
   const buttons = Array.from(new Array(9));
 
   return (
@@ -18,7 +23,17 @@ const GameBoard = ({ playerTurn, activePlayer, handlePlayerTurn }) => {
           icon = activePlayer === 1 ? "X" : "O";
         }
 
-        return <Cell key={id} icon={icon} onClick={handlePlayerTurn(id)} />;
+        const isWinningCell =
+          winningCombo && winningCombo.includes(id.toString());
+
+        return (
+          <Cell
+            key={id}
+            icon={icon}
+            onClick={handlePlayerTurn(id)}
+            isWinning={isWinningCell}
+          />
+        );
       })}
     </div>
   );

@@ -1,8 +1,11 @@
 import "./Cell.css";
 
-const Cell = ({ icon, onClick }) => {
+const Cell = ({ icon, onClick, isWinning }) => {
   return (
-    <button className="cell" onClick={onClick}>
+    <button
+      className={`cell ${isWinning ? "winning-cell" : ""}`}
+      onClick={onClick}
+    >
       {icon}
     </button>
   );

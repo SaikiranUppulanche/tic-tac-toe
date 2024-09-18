@@ -10,3 +10,19 @@
   padding: 1rem;
   box-sizing: border-box;
 }
+
+.scores {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.scores p {
+  margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+  .scores {
+    font-size: 1.2rem;
+  }
+}

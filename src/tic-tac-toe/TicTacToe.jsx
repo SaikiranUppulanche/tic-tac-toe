@@ -38,6 +38,8 @@ const TicTacToe = () => {
   const [message, setMessage] = useState("");
   const [isGameOver, setIsGameOver] = useState(false);
   const [moveCount, setMoveCount] = useState(0);
+  const [winningCombo, setWinningCombo] = useState(null);
+  const [scores, setScores] = useState({ X: 0, O: 0 });
 
   const handlePlayerTurn = (id) => {
     if (isGameOver) return;
@@ -62,6 +64,13 @@ const TicTacToe = () => {
       if (won) {
         setMessage(`Player ${DisplayPlayer[activePlayer]} has Won the Game.`);
         setIsGameOver(true);
+        setWinningCombo(won);
+
+        setScores((prevScores) => ({
+          ...prevScores,
+          [DisplayPlayer[activePlayer]]:
+            prevScores[DisplayPlayer[activePlayer]] + 1,
+        }));
       } else if (moveCount + 1 === 9) {
         setMessage("Game is drawn.");
         setIsGameOver(true);
@@ -75,10 +84,10 @@ const TicTacToe = () => {
 
   function isPlayerWon(turns) {
     const turnsInString = turns.sort().join("");
-    const isWon = winningPattterns.some((t) =>
-      checkSinglePattern(t, turnsInString)
+    const wonPattern = winningPattterns.find((pattern) =>
+      checkSinglePattern(pattern, turnsInString)
     );
-    return isWon;
+    return wonPattern ? wonPattern.split("") : null;
   }
 
   function checkSinglePattern(singlePattern, turnsInString) {
@@ -91,15 +100,22 @@ const TicTacToe = () => {
     setMessage("");
     setIsGameOver(false);
     setMoveCount(0);
+    setWinningCombo(null);
   }
 
   return (
     <div className="container">
       <CurrentPlayer activePlayer={activePlayer} />
+      <div className="scores">
+        <h3>Scores</h3>
+        <p>Player X: {scores.X}</p>
+        <p>Player O: {scores.O}</p>
+      </div>
       <GameBoard
         playerTurn={playerTurn}
         activePlayer={activePlayer}
         handlePlayerTurn={handlePlayerTurn}
+        winningCombo={winningCombo}
       />
       <MessageDisplay message={message} onRestart={handleRestart} />
     </div>
