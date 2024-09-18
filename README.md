@@ -2,6 +2,10 @@
 
 This is a simple and interactive Tic-Tac-Toe game built using **React** with **Vite** as the build tool. The game supports two players: **X** and **O**, and alternates turns after each move. It declares a winner when one player gets three in a row or ends in a draw after 9 moves.
 
+## Demo
+
+You can play the game [here](https://tictactoesai.netlify.app/).
+
 ## Features
 
 - Responsive design, playable on both desktop and mobile devices.
